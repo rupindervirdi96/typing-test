@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Input from "./Components/Input";
+import Word from "./Components/Word.jsx";
 
 function App() {
+  const words = ["lorem", "ipsum", "tispum","lorem", "ipsum", "tispum","lorem", "ipsum", "tispum","lorem", "ipsum", "tispum","lorem", "ipsum", "tispum","lorem", "ipsum", "tispum","lorem", "ipsum", "tispum"];
+
+  const [wordCount, setWordCount] = useState(0);
+
+  // useEffect(()=>{
+  //   console.log(wordCount);
+  // }, [wordCount])
+
+  const runCheck = () => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="words">
+        {words?.map((word, i) => (
+          <Word letters={word} index={i} wordCount={wordCount} />
+        ))}
+      </div>
+      <Input
+        words={words}
+        runCheck={() => runCheck}
+        setWordCount={setWordCount}
+        currentIndex={wordCount}
+      />
     </div>
   );
 }
 
 export default App;
+
+/* 
+1. enter a key match if it is a substring of original word. 
+2. 
+*/
