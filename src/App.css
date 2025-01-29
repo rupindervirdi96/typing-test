@@ -1,0 +1,7 @@
+.text-display {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+  padding: 15px;
+  border: 2px dashed black;
+}

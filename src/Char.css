@@ -1,0 +1,13 @@
+.char{
+    font-size: 20px;
+    font-weight: bold;
+}
+.incorrect{
+    color: red;
+}
+.correct{
+    color: darkgreen;
+}
+.neutral{
+    color: black;
+}
